@@ -121,7 +121,8 @@ export default function App() {
       <ChatWindow messages={messages} onSend={handleSend} typing={typing} />
 
       <footer className="app-footer">
-        No account, no API key, nothing to install — this whole chat runs on your device. Just share the link.
+        No account, no API key, nothing to install — this whole chat runs on your device. Just share the link.{" "}
+        <a href="./flybrain.html">🪰 Or try the Fly Brain</a>
       </footer>
     </div>
   );

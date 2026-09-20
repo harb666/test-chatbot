@@ -1,0 +1,13 @@
+{
+  "name": "Fly Brain",
+  "short_name": "Fly Brain",
+  "description": "A live, simplified simulation of a fruit fly's brain circuitry, driven by your phone camera.",
+  "start_url": "./flybrain.html",
+  "display": "standalone",
+  "background_color": "#0b0b10",
+  "theme_color": "#0b0b10",
+  "icons": [
+    { "src": "./flybrain-icon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "./flybrain-icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

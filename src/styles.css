@@ -269,3 +269,7 @@ body {
   padding: 6px 16px max(8px, env(safe-area-inset-bottom));
   background: var(--panel);
 }
+
+.app-footer a {
+  color: var(--accent);
+}

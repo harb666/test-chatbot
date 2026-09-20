@@ -1,0 +1,221 @@
+:root {
+  color-scheme: dark;
+  --fb-bg: #0b0b10;
+  --fb-panel: #14141d;
+  --fb-panel-2: #1a1a26;
+  --fb-text: #f2f1ec;
+  --fb-muted: #9a98a8;
+  --fb-accent: #57d9ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--fb-bg);
+  color: var(--fb-text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fb-app {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-width: 560px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.fb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: max(12px, env(safe-area-inset-top)) 16px 10px;
+  background: linear-gradient(180deg, var(--fb-panel), rgba(20, 20, 29, 0.6));
+}
+
+.fb-title-block h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}
+
+.fb-title-block p {
+  margin: 2px 0 0;
+  font-size: 11.5px;
+  color: var(--fb-muted);
+}
+
+.fb-share-btn {
+  border: none;
+  background: var(--fb-accent);
+  color: #04222c;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.fb-scene-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: #0c0c14;
+}
+
+.fb-scene-wrap canvas {
+  display: block;
+  touch-action: none;
+}
+
+.fb-escape-flash {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 90, 90, 0.18);
+  border: 1px solid rgba(255, 90, 90, 0.55);
+  color: #ffd7d7;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  animation: fb-flash-pop 0.9s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes fb-flash-pop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-6px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fb-camera-preview {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  opacity: 0.85;
+  transform: scaleX(-1);
+  background: #000;
+}
+
+.fb-camera-controls {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.fb-status-pill {
+  font-size: 10.5px;
+  color: var(--fb-muted);
+  background: rgba(10, 10, 14, 0.55);
+  backdrop-filter: blur(6px);
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.fb-status-active {
+  color: #a6f5c9;
+}
+
+.fb-camera-btn,
+.fb-startle-btn {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(20, 20, 29, 0.8);
+  backdrop-filter: blur(6px);
+  color: var(--fb-text);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.fb-startle-btn {
+  background: rgba(255, 90, 90, 0.2);
+  border-color: rgba(255, 90, 90, 0.4);
+}
+
+.fb-readout {
+  background: var(--fb-panel);
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fb-readout-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fb-readout-label {
+  font-size: 10.5px;
+  width: 78px;
+  flex: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fb-readout-track {
+  flex: 1;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.fb-readout-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.15s linear;
+}
+
+.fb-footer {
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--fb-muted);
+  padding: 8px 16px max(10px, env(safe-area-inset-bottom));
+  background: var(--fb-panel);
+}
+
+.fb-footer a {
+  color: var(--fb-accent);
+}
